@@ -1061,19 +1061,20 @@ While one goal was making it simple to create a GUI another just as important go
       
 The key to custom windows in PySimpleGUI is to view windows as ROWS of GUI  Elements.  Each row is specified as a list of these Elements.  Put the rows together and you've got a window.  This means the GUI is defined as a series of Lists, a Pythonic way of looking at things.    
       
- Let's dissect this little program     
- ```python    
-    import PySimpleGUI as sg      
-      
-    layout = [[sg.Text('Rename files or folders')],      
-              [sg.Text('Source for Folders', size=(15, 1)), sg.InputText(), sg.FolderBrowse()],      
-              [sg.Text('Source for Files ', size=(15, 1)), sg.InputText(), sg.FolderBrowse()],      
-              [sg.Submit(), sg.Cancel()]]      
-      
-    window = sg.Window('Rename Files or Folders')      
-      
-    event, values = window.Layout(layout).Read()    
-   ```    
+Let's dissect this little program  
+ 
+```python    
+import PySimpleGUI as sg      
+  
+layout = [[sg.Text('Rename files or folders')],      
+          [sg.Text('Source for Folders', size=(15, 1)), sg.InputText(), sg.FolderBrowse()],      
+          [sg.Text('Source for Files ', size=(15, 1)), sg.InputText(), sg.FolderBrowse()],      
+          [sg.Submit(), sg.Cancel()]]      
+  
+window = sg.Window('Rename Files or Folders')      
+  
+event, values = window.Layout(layout).Read()    
+```  
       
       
 ![snap0131](https://user-images.githubusercontent.com/13696193/43417007-df6d8408-9407-11e8-9986-30f0415f08a5.jpg)      
